@@ -23,5 +23,17 @@ class MainActivity : AppCompatActivity() {
             }
             words.add(word)
         }
+
+        binding.clearWords.setOnClickListener {
+            words.clear()
+        }
+
+        binding.showWords.setOnClickListener{
+            if (words.size == 0) {
+                binding.resultTextView.text ="empty"
+            }else{
+                binding.resultTextView.text = words.toString()
+            }
+        }
     }
 }
